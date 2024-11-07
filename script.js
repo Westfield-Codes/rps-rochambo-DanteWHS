@@ -1,4 +1,3 @@
-
 function main(){
     let uChoice = 0;
     let cChoice = 0;
@@ -10,19 +9,17 @@ function main(){
     findWinner(uChoice, cChoice);
 }
 
-function uTurn(){
-   let choice = prompt("enter r, p, or s");
-   if (choice=="r" || choice=="p" || choice=="s") {
+function uTurn() {
+    let choice = prompt("enter r, p, or s");
+    while (choice!="r" && choice!="p" && choice!="s") {
+        alert("must be r, p, or s");
+        choice = prompt("enter r, p, or s");
+    }
     return choice;
-   }
-   else {
-    alert("must be r, p, or s");
-    uTurn();
-   }
 }
 
 function cTurn(){
-    choice = Math.floor(Math.random()*2)
+    let choice = Math.floor(Math.random()*2)
     switch(choice) {
         case 0 :
             choice = "r";
