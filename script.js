@@ -26,14 +26,10 @@ function cTurn(){
 }
 
 function findWinner(uChoice, cChoice){
-    let win = 0
     let winArray = [["r", "p", "Computer"], ["p", "s", "Computer"], ["s", "r", "Computer"], 
     ["r", "s", "You"], ["s", "p", "You"], ["p", "r", "You"]];
     for (let i = 0; i<winArray.length; i++){
-        if (winArray[i].includes(uChoice && cChoice)==true) {
-            win = winArray.indexOf();
-            break;
-        }
+        if (winArray[i][0]+winArray[i][1]==uChoice+cChoice) break;
     }
-    alert(uChoice + " Vs. " + cChoice + ". " + winArray[win][2] + " won!");
+    alert(uChoice + " Vs. " + cChoice + ". " + winArray[i][2] + " won!");
 }
