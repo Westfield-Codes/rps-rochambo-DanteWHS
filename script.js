@@ -26,8 +26,7 @@ function cTurn(){
 }
 
 function findWinner(uChoice, cChoice){
-    let winArray = [["r", "p", "Computer"], ["p", "s", "Computer"], ["s", "r", "Computer"], 
-    ["r", "s", "You"], ["s", "p", "You"], ["p", "r", "You"]];
+    let winArray = [["r", "p", "Computer"], ["p", "s", "Computer"], ["s", "r", "Computer"], ["r", "s", "You"], ["s", "p", "You"], ["p", "r", "You"]];
     for (let i = 0; i<winArray.length; i++){
         if (winArray[i][0]+winArray[i][1]==uChoice+cChoice) break;
     }
