@@ -10,45 +10,25 @@ function main(){
 }
 
 function uTurn() {
+    let moves = ["r", "p", "s"];
     let choice = prompt("enter r, p, or s");
-    while (choice!="r" && choice!="p" && choice!="s") {
+    if (moves.includes(choice)) return choice;
+    else {
         alert("must be r, p, or s");
-        choice = prompt("enter r, p, or s");
+        return uTurn();
     }
-    return choice;
 }
 
 function cTurn(){
-    let choice = Math.floor(Math.random()*2)
-    switch(choice) {
-        case 0 :
-            choice = "r";
-            break;
-        case 1 :
-            choice = "p";
-            break;
-        case 2 :
-            choice = "s";
-            break;
-    }
-    return choice;
+    let moves = ["r", "p", "s"];
+    let choice = Math.floor(Math.random()*2);
+    return moves[choice];
 }
 
 function findWinner(uChoice, cChoice){
-    let winner = 0
-    switch (uChoice) {
-        case "r" :
-            if (cChoice=="p") winner = "Computer";
-            else winner = "You";
-            break;
-        case "p" :
-            if (cChoice=="s") winner = "Computer";
-            else winner = "You";
-            break;
-        case "s" :
-            if (cChoice=="r") winner = "Computer";
-            else winner = "You";
-            break;
+    let winArray = [["r", "p", "Computer"], ["p", "s", "Computer"], ["s", "r", "Computer"], ["r", "s", "You"], ["s", "p", "You"], ["p", "r", "You"]];
+    for (let i = 0; i<winArray.length; i++){
+        if (winArray[i][0]+winArray[i][1]==uChoice+cChoice) break;
     }
-    alert(uChoice + " Vs. " + cChoice + ". " + winner + " won!");
+    alert(uChoice + " Vs. " + cChoice + ". " + winArray[i][2] + " won!");
 }
