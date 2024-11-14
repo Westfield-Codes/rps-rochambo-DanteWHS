@@ -1,8 +1,18 @@
 function main(){
-    let youWin = 0
-    let iWin = 0
-    for (let x = 1; x<=3; x++){
-        alert("Round "+x);
+    let rounds = setRound();
+    for (let round=1;round<=rounds;round++) {
+        alert("Round "+round);
+        rpsRound();
+    }
+}
+
+function setRound(){
+    let set = prompt("How many rounds?")
+    parseInt(set);
+    return set;
+}
+
+function rpsRound(){
         let uChoice = 0;
         let cChoice = 0;
         while (uChoice==cChoice) {
@@ -10,12 +20,10 @@ function main(){
             cChoice = cTurn();
             if (uChoice==cChoice) alert("we both chose " + cChoice);
         }
-        let win = findWinner(uChoice, cChoice);
-        if (win=="You") youWin+=1;
-        else iWin+=1;
-    }
-    if (youWin>iWin) alert("You won " + youWin + " of 3 rounds, you win!");
-    else alert("You won " + youWin + " of 3 rounds, computer wins!");
+        let winner = findWinner(uChoice, cChoice);
+        let players = ["You", "Computer"];
+        let win = players.indexOf(winner)
+        return win;
 }
 
 function uTurn() {
