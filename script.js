@@ -1,15 +1,25 @@
+var score = [0,0]
+
 function main(){
+    let winner = 3
     let rounds = setRound();
     for (let round=1;round<=rounds;round++) {
         alert("Round "+round);
-        rpsRound();
+        winner = rpsRound();
+        score[winner]++;
     }
+    alert("you have " + score[0] + " and computer has " + score[1]);
+    if (score[0]>score[1]) alert("You win!");
+    else alert("Computer wins!");
 }
 
 function setRound(){
     let set = prompt("How many rounds?")
-    parseInt(set);
-    return set;
+    if (set%2==0){
+        alert("Must be odd");
+        return setRound();
+    }
+    else return set;
 }
 
 function rpsRound(){
