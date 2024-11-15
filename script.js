@@ -1,7 +1,7 @@
-var score = [0,0]
+var score = [0,0];
 
 function main(){
-    let winner = 3
+    let winner = 3;
     let rounds = setRound();
     for (let round=1;round<=rounds;round++, score[winner]++) {
         alert("Round "+round);
@@ -13,7 +13,7 @@ function main(){
 }
 
 function setRound(){
-    let set = prompt("How many rounds?")
+    let set = prompt("How many rounds?");
     if (set%2==0){
         alert("Must be odd");
         return setRound();
@@ -31,7 +31,7 @@ function rpsRound(){
         }
         let winner = findWinner(uChoice, cChoice);
         let players = ["You", "Computer"];
-        let win = players.indexOf(winner)
+        let win = players.indexOf(winner);
         return win;
 }
 
