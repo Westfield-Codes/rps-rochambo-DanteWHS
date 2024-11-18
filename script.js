@@ -13,12 +13,8 @@ function main(){
 
 function setRound(){
     let set = prompt("How many rounds?");
-    if (set%2==0){
-        alert("Must be odd");
-        return setRound();
-    }
-    if (isNaN(set)==true) {
-        alert("must be a number")
+    if (set%2==0||isNaN(set)==true){
+        alert("Must be an odd number");
         return setRound();
     }
     else return set;
