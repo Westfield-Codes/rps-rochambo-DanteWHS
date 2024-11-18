@@ -9,6 +9,8 @@ function main(){
     alert("you have " + score[0] + " and computer has " + score[1]);
     if (score[0]>score[1]) alert("You win!");
     else alert("Computer wins!");
+    again = confirm("Play again?");
+    if (again==true) main();
 }
 
 function setRound(){
