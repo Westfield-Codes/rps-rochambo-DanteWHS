@@ -18,7 +18,7 @@ function setRound(){
         return setRound();
     }
     if (isNaN(set)==true) {
-        alert("Choose a number")
+        alert("must be a number")
         return setRound();
     }
     else return set;
