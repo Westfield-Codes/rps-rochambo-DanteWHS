@@ -1,6 +1,5 @@
-var score = [0,0];
-
 function main(){
+    let score = [0,0];
     let winner = 3;
     let rounds = setRound();
     for (let round=1;round<=rounds;round++, score[winner]++) {
@@ -16,6 +15,10 @@ function setRound(){
     let set = prompt("How many rounds?");
     if (set%2==0){
         alert("Must be odd");
+        return setRound();
+    }
+    if (isNaN(set)==true) {
+        alert("Choose a number")
         return setRound();
     }
     else return set;
@@ -47,7 +50,7 @@ function uTurn() {
 
 function cTurn(){
     let moves = ["r", "p", "s"];
-    let choice = Math.floor(Math.random()*2);
+    let choice = Math.floor(Math.random()*3);
     return moves[choice];
 }
 
